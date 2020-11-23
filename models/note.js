@@ -10,7 +10,7 @@ const db_url =
 console.log('connecting to MongoDB...')
 
 mongoose.connect(db_url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
-  .then(result => {
+  .then(() => {
     console.log('Connection to MongoDB established!')
   })
   .catch((error) => {

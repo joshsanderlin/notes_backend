@@ -77,7 +77,7 @@ app.put('/api/notes/:id', (request, response, next) => {
   }
 
   Note
-    .findByIdAndUpdate(request.params.id, note, {new: true})
+    .findByIdAndUpdate(request.params.id, note, { new: true })
     .then(updatedNote => {
       response.json(updatedNote)
     })
@@ -87,7 +87,7 @@ app.put('/api/notes/:id', (request, response, next) => {
 app.delete('/api/notes/:id', (request, response, next) => {
   Note
     .findByIdAndRemove(request.params.id)
-    .then(result => {
+    .then(() => {
       response.status(204).end()
     })
     .catch(error => next(error))
@@ -95,7 +95,7 @@ app.delete('/api/notes/:id', (request, response, next) => {
 
 /* Catch all for undefined routes */
 const unknownEndpoint = (request, response) => {
-  response.status(404).send({error: 'unknown endpoint' })
+  response.status(404).send({ error: 'unknown endpoint' })
 }
 
 app.use(unknownEndpoint)
