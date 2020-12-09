@@ -32,7 +32,7 @@ Note.find({}).then(result => {
 })
 
 // const note = new Note({
-//   content: 'Cyberpunk 2077 is gonna be the tits',
+//   content: 'Sports',
 //   date: new Date(),
 //   important: true,
 // })
